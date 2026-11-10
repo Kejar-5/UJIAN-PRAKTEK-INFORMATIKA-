@@ -1,6 +1,261 @@
 <!DOCTYPE html>
-<html>
-  <body>
-      <p>anjay mabar</p>
-  </body>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kata Bijak Ngawi 🗿</title>
+
+  <!-- Font Google: Impactful & Meme style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #08080c;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: radial-gradient(circle at center, #1e1329 0%, #050508 100%);
+    }
+
+    /* Kartu Utama */
+    .meme-card {
+      background: rgba(26, 21, 37, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 24px;
+      max-width: 520px;
+      width: 100%;
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8),
+                  0 0 40px rgba(168, 85, 247, 0.15);
+      position: relative;
+    }
+
+    /* Foto Meme */
+    .meme-img-container {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #a855f7, #ec4899, #eab308);
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+      overflow: hidden;
+    }
+
+    .meme-img-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(110%);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 16px;
+      border-radius: 50px;
+      color: #c084fc;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+
+    /* Box Kata-Kata */
+    .quote-box {
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .quote-text {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #f3f4f6;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s ease;
+    }
+
+    .author {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-top: 15px;
+      font-style: italic;
+    }
+
+    /* Tombol Aksi */
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      padding: 12px 22px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-next {
+      background: #a855f7;
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    }
+
+    .btn-next:hover {
+      background: #9333ea;
+      transform: translateY(-2px);
+    }
+
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f3f4f6;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-copy:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Toast popup saat disalin */
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      background: #22c55e;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="meme-card">
+    <!-- Foto Meme -->
+    <div class="meme-img-container">
+      <img 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQI70TGtzztFh610NmRSTvBXq2UT-IkWZQGKzfWrFcRA&s=10" 
+        alt="Foto Meme"
+      />
+    </div>
+
+    <span class="badge">KATA MUTIARA NGAWI 🗿</span>
+
+    <!-- Konten Kata-Kata -->
+    <div class="quote-box">
+      <p class="quote-text" id="quoteText">
+        "Jangan pernah menyerah sebelum mencoba, tapi kalau sudah mencoba dan gagal yaudah nyerah aja jir, tidur lebih enak."
+      </p>
+      <p class="author" id="quoteAuthor">— Filsuf Pinggir Rel, 2026</p>
+    </div>
+
+    <!-- Tombol -->
+    <div class="btn-group">
+      <button class="btn btn-next" onclick="nextQuote()">
+        🎲 Ganti Kata-Kata
+      </button>
+      <button class="btn btn-copy" onclick="copyQuote()">
+        📋 Salin
+      </button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Kata-kata berhasil disalin! 🗿</div>
+
+  <script>
+    // Koleksi kata-kata meme absurd ala shitpost Indo
+    const quotes = [
+      {
+        text: `"Jangan pernah menyerah sebelum mencoba, tapi kalau sudah mencoba dan gagal yaudah nyerah aja jir, tidur lebih enak."`,
+        author: "— Filsuf Pinggir Rel"
+      },
+      {
+        text: `"Hidup itu seperti roda yang berputar. Kadang di atas, kadang di bawah, kadang rodanya lepas terus masuk selokan."`,
+        author: "— Master Fuad Ngawi"
+      },
+      {
+        text: `"Uang bukan segalanya di dunia ini. Masih ada Masako, Royco, sama micin Cap Badak."`,
+        author: "— Kang Martabak Mistis"
+      },
+      {
+        text: `"Sepandai-pandainya tupai melompat, kalau ngantuk ya tetep molor."`,
+        author: "— Ksatria Kegelapan"
+      },
+      {
+        text: `"Jika kamu merasa beban hidupmu berat, ingatlah... kamu sendiri yang milih jalur susah jir."`,
+        author: "— Motivator Angkringan"
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function nextQuote() {
+      currentIndex = (currentIndex + 1) % quotes.length;
+      const qText = document.getElementById("quoteText");
+      const qAuthor = document.getElementById("quoteAuthor");
+
+      // Animasi kedip transisi teks
+      qText.style.opacity = 0;
+      setTimeout(() => {
+        qText.innerText = quotes[currentIndex].text;
+        qAuthor.innerText = quotes[currentIndex].author;
+        qText.style.opacity = 1;
+      }, 150);
+    }
+    function copyQuote() {
+      const current = quotes[currentIndex];
+      const fullText = `${current.text}\n\n${current.author}`;
+
+      navigator.clipboard.writeText(fullText).then(() => {
+        const toast = document.getElementById("toast");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2000);
+      });
+    }
+  </script>
+</body>
 </html>
