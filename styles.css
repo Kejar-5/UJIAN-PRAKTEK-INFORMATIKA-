@@ -2,8 +2,8 @@ body {
   padding: 25px;
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #FFF7ED, #FFEDD5);
-  color: #57534E;
+  background: linear-gradient(135deg, #0F172A, #1E1B4B, #134E4A);
+  color: #CBD5E1;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -13,14 +13,14 @@ body {
   text-align: center;
 }
 
-/* Memberikan bayangan teks agar judul terbaca kontras di atas latar */
+/* Memberikan bayangan teks agar judul terbaca kontras di atas latar berwarna */
 .title, h2 {
-  color: #431407;
-  text-shadow: 2px 2px 4px rgba(67, 20, 7, 0.14);
+  color: #F8FAFC;
+  text-shadow: 2px 2px 6px rgba(2, 6, 23, 0.75);
 }
 
 .title {
-  color: #C2410C;
+  color: #38BDF8;
 }
 
 /* Kontainer Grid Utama */
@@ -42,37 +42,128 @@ body {
 table.profile-table {
   border-collapse: separate;
   border-spacing: 0;
-  border: 1px solid #FED7AA;
-  border-top: 4px solid #EA580C;
+  border: 2px solid #38BDF8;
+  border-top: 6px solid #0EA5E9;
   width: 100%;
-  /* Latar belakang kartu dengan transparansi agar menyatu dengan background */
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 8px;
+  /* Latar belakang kartu berwarna dengan transparansi agar menyatu dengan background */
+  background-color: rgba(30, 41, 59, 0.92);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(124, 45, 18, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 table.profile-table:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.24);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(14, 165, 233, 0.4);
 }
 
 table.profile-table td {
   border: none;
-  padding: 20px;
+  padding: 22px 20px;
   text-align: center;
 }
 
 table.profile-table h3 {
   margin-top: 0;
   margin-bottom: 8px;
-  color: #292524;
+  color: #F8FAFC;
 }
 
 table.profile-table p {
-  color: #57534E;
+  color: #CBD5E1;
   margin: 5px 0;
+}
+
+/* Variasi Warna-Warni Otomatis untuk Setiap Kartu Profil */
+.profile-card:nth-child(6n+1) table.profile-table {
+  background-color: rgba(15, 23, 42, 0.92);
+  border-color: #0284C7;
+  border-top-color: #38BDF8;
+}
+.profile-card:nth-child(6n+1) table.profile-table:hover {
+  box-shadow: 0 10px 24px rgba(56, 189, 248, 0.38);
+}
+.profile-card:nth-child(6n+1) table.profile-table h3 {
+  color: #E0F2FE;
+}
+.profile-card:nth-child(6n+1) table.profile-table p {
+  color: #BAE6FD;
+}
+
+.profile-card:nth-child(6n+2) table.profile-table {
+  background-color: rgba(6, 44, 34, 0.92);
+  border-color: #059669;
+  border-top-color: #34D399;
+}
+.profile-card:nth-child(6n+2) table.profile-table:hover {
+  box-shadow: 0 10px 24px rgba(52, 211, 153, 0.38);
+}
+.profile-card:nth-child(6n+2) table.profile-table h3 {
+  color: #D1FAE5;
+}
+.profile-card:nth-child(6n+2) table.profile-table p {
+  color: #A7F3D0;
+}
+
+.profile-card:nth-child(6n+3) table.profile-table {
+  background-color: rgba(30, 20, 56, 0.92);
+  border-color: #7C3AED;
+  border-top-color: #A78BFA;
+}
+.profile-card:nth-child(6n+3) table.profile-table:hover {
+  box-shadow: 0 10px 24px rgba(167, 139, 250, 0.38);
+}
+.profile-card:nth-child(6n+3) table.profile-table h3 {
+  color: #EDE9FE;
+}
+.profile-card:nth-child(6n+3) table.profile-table p {
+  color: #DDD6FE;
+}
+
+.profile-card:nth-child(6n+4) table.profile-table {
+  background-color: rgba(46, 16, 33, 0.92);
+  border-color: #E11D48;
+  border-top-color: #FB7185;
+}
+.profile-card:nth-child(6n+4) table.profile-table:hover {
+  box-shadow: 0 10px 24px rgba(251, 113, 133, 0.38);
+}
+.profile-card:nth-child(6n+4) table.profile-table h3 {
+  color: #FFE4E6;
+}
+.profile-card:nth-child(6n+4) table.profile-table p {
+  color: #FECDD3;
+}
+
+.profile-card:nth-child(6n+5) table.profile-table {
+  background-color: rgba(39, 26, 7, 0.92);
+  border-color: #D97706;
+  border-top-color: #FBBF24;
+}
+.profile-card:nth-child(6n+5) table.profile-table:hover {
+  box-shadow: 0 10px 24px rgba(251, 191, 36, 0.38);
+}
+.profile-card:nth-child(6n+5) table.profile-table h3 {
+  color: #FEF3C7;
+}
+.profile-card:nth-child(6n+5) table.profile-table p {
+  color: #FDE68A;
+}
+
+.profile-card:nth-child(6n+6) table.profile-table {
+  background-color: rgba(8, 38, 46, 0.92);
+  border-color: #0891B2;
+  border-top-color: #22D3EE;
+}
+.profile-card:nth-child(6n+6) table.profile-table:hover {
+  box-shadow: 0 10px 24px rgba(34, 211, 238, 0.38);
+}
+.profile-card:nth-child(6n+6) table.profile-table h3 {
+  color: #CFFAFE;
+}
+.profile-card:nth-child(6n+6) table.profile-table p {
+  color: #A5F3FC;
 }
 
 /* === RESPONSIVE LAYOUT (MEDIA QUERIES) === */
